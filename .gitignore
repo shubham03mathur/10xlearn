@@ -1,0 +1,151 @@
+# --------------------------------------------------
+# Secrets and local environment
+# --------------------------------------------------
+.env
+.env.*
+!.env.local
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+
+# --------------------------------------------------
+# Python
+# --------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+site/
+downloads/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# --------------------------------------------------
+# Jupyter and notebooks
+# --------------------------------------------------
+.ipynb_checkpoints/
+
+# --------------------------------------------------
+# Editors and OS files
+# --------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# --------------------------------------------------
+# Logs and runtime files
+# --------------------------------------------------
+*.log
+logs/
+*.pid
+*.pid.lock
+*.out
+*.err
+
+# --------------------------------------------------
+# AI/ML experiment artifacts
+# Keep source data and curated examples intentionally.
+# Ignore generated caches, checkpoints, indexes, and outputs.
+# --------------------------------------------------
+artifacts/
+outputs/
+runs/
+results/
+reports/
+checkpoints/
+wandb/
+mlruns/
+tensorboard/
+lightning_logs/
+
+# Model and dataset caches
+.cache/
+.huggingface/
+.transformers/
+.datasets/
+.dspy_cache/
+
+# Vector stores and retrieval indexes
+chroma/
+chromadb/
+*_chroma_db/
+faiss_index/
+faiss_indexes/
+*.faiss
+*.idx
+*.index
+qdrant_storage/
+milvus/
+lancedb/
+
+# Common local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Binary model artifacts
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.gguf
+
+# --------------------------------------------------
+# Frontend / JS projects that may be added later
+# --------------------------------------------------
+node_modules/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+*.tsbuildinfo
+
+# --------------------------------------------------
+# Terraform / cloud / deployment leftovers
+# --------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# --------------------------------------------------
+# Project-specific generated files
+# --------------------------------------------------
+llamaindex/rag/alfred_chroma_db/
