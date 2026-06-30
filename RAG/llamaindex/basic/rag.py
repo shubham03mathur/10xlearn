@@ -2,7 +2,9 @@ from llama_index.llms.huggingface_api import HuggingFaceInferenceAPI
 from .indexing import get_index
 
 LLM_MODEL_NAME = "Qwen/Qwen2.5-Coder-32B-Instruct"
-DEFAULT_QUERY = "Does Florida has rent control laws? Provide the citations as well as a link"
+DEFAULT_QUERY = (
+    "Does Florida has rent control laws? Provide the citations as well as a link"
+)
 
 
 def get_query_engine():
