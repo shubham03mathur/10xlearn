@@ -6,7 +6,6 @@ DEFAULT_QUERY = (
     "Does Florida has rent control laws? Provide the citations as well as a link"
 )
 
-
 def get_query_engine():
     llm = HuggingFaceInferenceAPI(model_name=LLM_MODEL_NAME)
     return get_index().as_query_engine(
