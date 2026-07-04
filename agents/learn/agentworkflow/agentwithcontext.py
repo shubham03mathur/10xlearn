@@ -33,26 +33,30 @@ async def multiply(ctx: Context, a: int, b: int) -> int:
 async def main():
     llm = OpenRouter(api_base="https://openrouter.ai/api/v1", api_key=OPEN_AI_KEY)
 
-    addition_agent = ReActAgent(
-        name="addition_agent",
-        description="You are a helpful assistant and can use tool to perform addition of two numbers.",
-        tools=[addition],
-        llm=llm,
-    )
-
     multiply_agent = ReActAgent(
         name="multiply_agent",
         description="You are a helpful assitant and can use tool to perform multiplication of two numbers.",
         tools=[multiply],
         llm=llm,
+        can_handoff_to=["addition_agent"]
     )
+
+    addition_agent = ReActAgent(
+        name="addition_agent",
+        description="You are a helpful assistant and can use tool to perform addition of two numbers.",
+        tools=[addition],
+        llm=llm,
+        can_handoff_to=["multiply_agent"]
+    )
+
+    
 
     workflow = AgentWorkflow(
         agents=[addition_agent, multiply_agent],
         root_agent="multiply_agent",
         initial_state={"num_fn_calls": 0},
         state_prompt="Current state: {state}. User message: {msg}",
-        early_stopping_method='generate'
+        early_stopping_method='generate',
     )
 
     ctx = Context(workflow)
