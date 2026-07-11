@@ -1,27 +1,31 @@
 # AI / AI-Agents (10xlearn)
 
-This repository is a growing home for small, focused AI and AI-agent proof-of-concepts.
-The goal is to keep everything in one place while still organizing each PoC like a small, self-contained package.
+This repository is a growing workspace for learning, experimenting, and building with AI.
+Instead of keeping everything in separate small repos, the idea here is to keep related work in one place while still giving each area its own space.
 
-Right now the first packaged project is:
+Right now the repository has multiple categories:
 
-- `RAG/`: a Retrieval-Augmented Generation PoC built with LlamaIndex and ChromaDB
+- `python-for-ai/` for Python fundamentals with an AI-focused learning path
+- `agents/` for learning and experimenting with AI agent workflows
+- `RAG/` for Retrieval-Augmented Generation experiments
+
+For shared setup guidance, see [SETUP.md](/home/shubham/projects/AI/10xlearn/SETUP.md:1).
 
 ## Repository Approach
 
-This repo is intentionally structured like a monolith:
+This repo is intentionally organized like a monolith for AI learning and small proof-of-concepts:
 
-- one repository for related experiments
-- one folder per PoC or domain
-- each project keeps its own code, dependencies, and run instructions
+- one repository for related AI tracks
+- one top-level folder per topic or category
+- each folder can evolve as its own small learning module or project
 
-That gives us a few benefits:
+That structure helps keep things simple:
 
-- shared visibility across experiments
-- easier incremental expansion without creating many tiny repos
-- clearer boundaries inside each project folder
+- everything stays visible in one place
+- new categories can be added without creating a new repo every time
+- each area still has clear boundaries
 
-As the repo grows, new projects can follow the same pattern:
+## Current Repository Structure
 
 ```text
 .
@@ -30,99 +34,68 @@ As the repo grows, new projects can follow the same pattern:
 │   ├── requirements.txt
 │   └── llamaindex/
 │       └── basic/
-
+├── agents/
+│   ├── requirements.txt
+│   └── learn/
+│       ├── agentworkflow/
+│       └── multistep/
+└── python-for-ai/
+    ├── README.md
+    └── learn/
+        ├── variables.ipynb
+        ├── functions.ipynb
+        └── package.ipynb
 ```
 
-## Current Project: `RAG`
+## Categories
 
-The `RAG` folder is designed to be runnable as its own project.
+### `python-for-ai`
 
-### Structure
+This module is meant for learning or revisiting Python fundamentals with AI use cases in mind.
+It is especially useful for developers coming from other languages, or for anyone who wants a smoother start with Python before jumping deeper into AI frameworks and tooling.
 
-```text
-RAG/
-├── requirements.txt
-└── llamaindex/
-    ├── __init__.py
-    └── basic/
-        ├── __init__.py
-        ├── db.py
-        ├── indexing.py
-        ├── ingestion_pipeline.py
-        └── rag.py
-```
+Current learning material includes notebook-based lessons such as:
 
-### What It Does
+- variables
+- functions
+- packages
 
-- `ingestion_pipeline.py` downloads and prepares the dataset, creates embeddings, and stores vectors in ChromaDB
-- `db.py` configures the local Chroma vector store
-- `indexing.py` loads the vector store into a LlamaIndex index
-- `rag.py` runs a query against the indexed data
+Read more in [python-for-ai/README.md](/home/shubham/projects/AI/10xlearn/python-for-ai/README.md:1).
 
-## Setup
+### `agents`
 
-This project currently uses `uv` for environment management, but the Python dependencies are still declared in `RAG/requirements.txt`.
+This area is focused on learning AI-agent patterns and workflows.
+Based on the current structure, it includes experiments around:
 
-### 1. Create and activate the environment
+- basic workflows
+- multi-step flows
+- agent workflows with context and supervision patterns
 
-```bash
-cd RAG
-uv venv
-source .venv/bin/activate
-```
+This section is more code-driven right now and can grow into a more structured learning path over time.
 
-### 2. Install dependencies
+### `RAG`
 
-```bash
-uv pip install -r requirements.txt
-```
+The `RAG` folder is for Retrieval-Augmented Generation experiments built around LlamaIndex.
+At the moment it includes a basic setup for:
 
-### 3. Configure environment variables
+- ingestion
+- indexing
+- querying
+- evaluation
 
-Keep your local secrets outside the repo structure at the same level as `RAG/`.
+This makes it the more implementation-focused part of the repo compared to the learning-first modules.
 
-Example layout:
+## How to navigate this repo
 
-```text
-.
-├── .env.local
-└── RAG/
-```
+If your goal is to build a stronger foundation first, start with `python-for-ai/`.
+If you want to understand agent patterns, explore `agents/`.
+If you want to experiment with retrieval pipelines and LLM-backed querying, go into `RAG/`.
 
-Before running the project, rename `.env.local` to `.env` after adding your own secrets.
+Each top-level folder should be treated as its own area of work, with its own code, dependencies, and documentation as it grows.
 
-Expected secret:
+For environment setup and dependency installation, follow the shared instructions in [SETUP.md](/home/shubham/projects/AI/10xlearn/SETUP.md:1), then use any module-specific documentation where needed.
 
-```env
-HF_TOKEN=your_huggingface_token
-OPEN_ROUTER_KEY=your_openrouterkey
-```
+## Direction
 
-## Running The RAG PoC
-
-Run modules from inside `RAG/`:
-
-### Ingest data
-
-```bash
-cd RAG
-python -m llamaindex.basic.ingestion_pipeline
-```
-### Run indexing
-```bash
-python -m llamaindex.basic.indexing
-```
-### Run a query
-
-```bash
-cd RAG
-python -m llamaindex.basic.rag
-```
-
-## Roadmap
-
-Likely next improvements:
-
-- add a `RAG/.env.example`
-- add more RAG variants under `RAG/llamaindex/`
-- add new top-level PoC folders for other agent or retrieval experiments
+This repository will likely keep expanding with more categories over time.
+The main goal is to make `10xlearn` a practical place for learning by building, not just collecting isolated code samples.
