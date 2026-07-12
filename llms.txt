@@ -1,0 +1,91 @@
+# 10xlearn
+
+10xlearn is a multi-module repository for learning, experimenting, and building with AI.
+It keeps related AI work in one place while separating each area into its own folder.
+
+## Repository Purpose
+
+This repository is meant to be a practical workspace for:
+
+- learning Python for AI use cases
+- exploring agent workflows and agent patterns
+- experimenting with Retrieval-Augmented Generation
+
+The focus is on learning by building, not just collecting isolated code samples.
+
+## Main Areas
+
+### python-for-ai
+
+Path: `python-for-ai/`
+
+Purpose:
+- learn or revisit Python fundamentals with an AI-focused mindset
+- help developers coming from other languages get comfortable with Python
+- use notebook-based lessons for hands-on learning
+
+Current topics include:
+- variables
+- functions
+- packages
+
+Main doc:
+- `python-for-ai/README.md`
+
+### agents
+
+Path: `agents/`
+
+Purpose:
+- learn AI-agent concepts through code and examples
+- explore workflow patterns such as basic workflows, multi-step flows, and agent workflows
+
+Current areas include:
+- `learn/basicworkflow.py`
+- `learn/multistep/`
+- `learn/agentworkflow/`
+
+Module dependency file:
+- `agents/requirements.txt`
+
+### RAG
+
+Path: `RAG/`
+
+Purpose:
+- experiment with Retrieval-Augmented Generation
+- work with ingestion, indexing, querying, and evaluation flows
+- use LlamaIndex-based implementations
+
+Current areas include:
+- `llamaindex/basic/ingestion_pipeline.py`
+- `llamaindex/basic/indexing.py`
+- `llamaindex/basic/rag.py`
+- `llamaindex/basic/eval.py`
+
+Module dependency file:
+- `RAG/requirements.txt`
+
+## Setup Model
+
+This repository uses a module-level setup approach.
+
+- use `uv` for virtual environment management
+- create the virtual environment inside the module you want to work on
+- install dependencies from that module's `requirements.txt` when present
+
+General setup guide:
+- `SETUP.md`
+
+## Navigation Guidance
+
+If the goal is Python foundations for AI, start with `python-for-ai/`.
+If the goal is agent workflow learning, start with `agents/`.
+If the goal is retrieval and LLM-backed querying experiments, start with `RAG/`.
+
+## Notes for LLMs
+
+- treat each top-level module as a separate working area
+- prefer module-level docs when they exist
+- use the root `README.md` for the high-level repo map
+- use `SETUP.md` for shared environment and dependency setup guidance
