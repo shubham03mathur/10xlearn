@@ -1,7 +1,6 @@
 # AI / AI-Agents (10xlearn)
 
-This repository is a growing workspace for learning, experimenting, and building with AI.
-Instead of keeping everything in separate small repos, the idea here is to keep related work in one place while still giving each area its own space.
+10xLearn is a hands-on AI engineering learning repository where every topic is taught through code, experiments, and real projects instead of isolated notes.
 
 Right now the repository has multiple categories:
 
@@ -9,7 +8,7 @@ Right now the repository has multiple categories:
 - `agents/` for learning and experimenting with AI agent workflows
 - `RAG/` for Retrieval-Augmented Generation experiments
 
-For shared setup guidance, see [SETUP.md](/home/shubham/projects/AI/10xlearn/SETUP.md:1).
+For shared setup guidance, see [SETUP.md](./SETUP.md).
 
 ## Repository Approach
 
@@ -60,7 +59,7 @@ Current learning material includes notebook-based lessons such as:
 - functions
 - packages
 
-Read more in [python-for-ai/README.md](/home/shubham/projects/AI/10xlearn/python-for-ai/README.md:1).
+Read more in [python-for-ai/README.md](./python-for-ai/README.md).
 
 ### `agents`
 
@@ -93,7 +92,7 @@ If you want to experiment with retrieval pipelines and LLM-backed querying, go i
 
 Each top-level folder should be treated as its own area of work, with its own code, dependencies, and documentation as it grows.
 
-For environment setup and dependency installation, follow the shared instructions in [SETUP.md](/home/shubham/projects/AI/10xlearn/SETUP.md:1), then use any module-specific documentation where needed.
+For environment setup and dependency installation, follow the shared instructions in [SETUP.md](./SETUP.md), then use any module-specific documentation where needed.
 
 ## Direction
 
