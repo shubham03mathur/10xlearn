@@ -3,6 +3,46 @@
 10xlearn is a multi-module repository for learning, experimenting, and building with AI.
 It keeps related AI work in one place while separating each area into its own folder.
 
+## Repository Structure
+
+└── shubham03mathur-10xlearn/
+    ├── README.md
+    ├── SETUP.md
+    ├── agents/
+    │   ├── __init__.py
+    │   ├── READEME.md
+    │   ├── requirements.txt
+    │   └── learn/
+    │       ├── basicworkflow.py
+    │       ├── agentworkflow/
+    │       │   ├── __init__.py
+    │       │   ├── agenticworkflow.py
+    │       │   ├── agentwithcontext.py
+    │       │   └── supervisedagent.py
+    │       └── multistep/
+    │           ├── __init__.py
+    │           ├── loop.py
+    │           └── multi_step_template.py
+    ├── python-for-ai/
+    │   ├── README.md
+    │   ├── __init__.py
+    │   └── learn/
+    │       ├── 1.package.ipynb
+    │       ├── 2.variables.ipynb
+    │       ├── 3.functions.ipynb
+    │       └── 4.data-structure.ipynb
+    └── RAG/
+        ├── requirements.txt
+        └── llamaindex/
+            ├── __init__.py
+            └── basic/
+                ├── __init__.py
+                ├── db.py
+                ├── eval.py
+                ├── indexing.py
+                ├── ingestion_pipeline.py
+                └── rag.py
+
 ## Repository Purpose
 
 This repository is meant to be a practical workspace for:
