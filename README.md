@@ -24,26 +24,47 @@ That structure helps keep things simple:
 - new categories can be added without creating a new repo every time
 - each area still has clear boundaries
 
-## Current Repository Structure
+## Repository Structure
 
 ```text
-.
-├── README.md
-├── RAG/
-│   ├── requirements.txt
-│   └── llamaindex/
-│       └── basic/
-├── agents/
-│   ├── requirements.txt
-│   └── learn/
-│       ├── agentworkflow/
-│       └── multistep/
-└── python-for-ai/
+└── shubham03mathur-10xlearn/
     ├── README.md
-    └── learn/
-        ├── variables.ipynb
-        ├── functions.ipynb
-        └── package.ipynb
+    ├── SETUP.md
+    ├── agents/
+    │   ├── __init__.py
+    │   ├── READEME.md
+    │   ├── requirements.txt
+    │   └── learn/
+    │       ├── basicworkflow.py
+    │       ├── agentworkflow/
+    │       │   ├── __init__.py
+    │       │   ├── agenticworkflow.py
+    │       │   ├── agentwithcontext.py
+    │       │   └── supervisedagent.py
+    │       └── multistep/
+    │           ├── __init__.py
+    │           ├── loop.py
+    │           └── multi_step_template.py
+    ├── python-for-ai/
+    │   ├── README.md
+    │   ├── __init__.py
+    │   └── learn/
+    │       ├── 1.package.ipynb
+    │       ├── 2.variables.ipynb
+    │       ├── 3.functions.ipynb
+    │       └── 4.data-structure.ipynb
+    └── RAG/
+        ├── requirements.txt
+        └── llamaindex/
+            ├── __init__.py
+            └── basic/
+                ├── __init__.py
+                ├── db.py
+                ├── eval.py
+                ├── indexing.py
+                ├── ingestion_pipeline.py
+                └── rag.py
+
 ```
 
 ## Categories
