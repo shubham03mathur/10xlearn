@@ -7,3 +7,7 @@ llama-index-vector-stores-chroma
 huggingface_hub
 fsspec
 streamlit
+pypdf
+python-docx
+llama-index-llms-ollama
+llama-index-embeddings-ollama
