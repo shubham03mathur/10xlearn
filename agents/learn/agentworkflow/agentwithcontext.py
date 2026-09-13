@@ -1,3 +1,15 @@
+"""
+Module for demonstrating AgentWorkflows with persistent context.
+
+This module illustrates how to use the `Context` object to maintain state 
+(e.g., counting function calls) across multiple agent turns.
+"""
+"""
+Module for demonstrating AgentWorkflows with persistent context.
+
+This module illustrates how to use the `Context` object to maintain state 
+(e.g., counting function calls) across multiple agent turns.
+"""
 import asyncio
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -9,11 +21,22 @@ from llama_index.llms.openrouter import OpenRouter
 envpath = find_dotenv()
 load_dotenv(envpath)
 
+
 OPEN_AI_KEY = os.getenv("OPEN_ROUTER_KEY")
 
 
 async def addition(ctx: Context, a: int, b: int) -> int:
-    """Add two numbers"""
+    """
+    Adds two integers and updates the shared state count.
+
+    Args:
+        ctx: The execution context containing the shared state.
+        a: The first integer.
+        b: The second integer.
+
+    Returns:
+        The sum of a and b.
+    """
     curr_state = await ctx.store.get("state", default={"num_fn_calls": 0})
     curr_state["num_fn_calls"] += 1
     await ctx.store.set('state', curr_state)
@@ -21,17 +44,30 @@ async def addition(ctx: Context, a: int, b: int) -> int:
 
 
 async def multiply(ctx: Context, a: int, b: int) -> int:
-    """Multiply two numbers"""
+    """
+    Multiplies two integers and updates the shared state count.
 
+    Args:
+        ctx: The execution context containing the shared state.
+        a: The first integer.
+        b: The second integer.
+
+    Returns:
+        The product of a and b.
+    """
     curr_state = await ctx.store.get("state", default={"num_fn_calls": 0})
     curr_state["num_fn_calls"] += 1
     await ctx.store.set('state', curr_state)
-
     return a * b
 
 
 async def main():
+    """
+    Entry point for the multiplication example.
+    Initializes the agents, defines the workflow, and executes a sample query.
+    """
     llm = OpenRouter(api_base="https://openrouter.ai/api/v1", api_key=OPEN_AI_KEY)
+
 
     multiply_agent = ReActAgent(
         name="multiply_agent",

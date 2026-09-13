@@ -13,6 +13,9 @@
 *.p12
 *.pfx
 secrets/
+.opencode
+.opencode/*
+.github
 
 # --------------------------------------------------
 # Python
@@ -148,4 +151,5 @@ coverage/
 # --------------------------------------------------
 # Project-specific generated files
 # --------------------------------------------------
-llamaindex/rag/alfred_chroma_db/
+RAG/llamaindex/rag/xarvis_db/
+
