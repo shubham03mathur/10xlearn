@@ -152,4 +152,9 @@ coverage/
 # Project-specific generated files
 # --------------------------------------------------
 RAG/llamaindex/rag/xarvis_db/
+RAG/llamaindex/xarvis_db
+RAG/llamaindex/xarvis_db/*
+RAG/llamaindex/practice/pipeline-storage
+RAG/llamaindex/practice/pipeline-storage/*
 
+pipeline-storage
