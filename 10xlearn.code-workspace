@@ -1,8 +1,35 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "name": "📁 Monorepo Root",
+      "path": ".",
+    },
+    {
+      "name": "RAG",
+      "path": "RAG",
+    },
+    {
+      "name": "agents",
+      "path": "agents",
+    },
+    {
+      "name": "langchain",
+      "path": "langchain",
+    },
+    {
+      "name": "python-for-ai",
+      "path": "python-for-ai",
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.env": false,
+      "RAG": true,
+      "agents": true,
+      "langchain": true,
+      "python-for-ai": true
+    },
+    "explorer.excludeGitIgnore": false
+  },
 }
