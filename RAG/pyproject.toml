@@ -1,0 +1,26 @@
+[project]
+name = "10xlearn-rag"
+version = "0.1.0"
+description = "RAG experiments and examples"
+authors = [
+    { name = "Shubham Mathur" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    "llama-index-llms-huggingface-api",
+    "llama-index-embeddings-huggingface",
+    "python-dotenv",
+    "datasets",
+    "chromadb",
+    "llama-index-vector-stores-chroma",
+    "huggingface_hub",
+    "fsspec",
+    "streamlit",
+    "pypdf",
+    "python-docx",
+    "llama-index-llms-ollama",
+    "llama-index-embeddings-ollama",
+]
+
+[tool.uv]
+package = false

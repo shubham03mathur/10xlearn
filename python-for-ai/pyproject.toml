@@ -1,0 +1,12 @@
+[project]
+name = "10xlearn-python-for-ai"
+version = "0.1.0"
+description = "Python fundamentals for AI development"
+authors = [
+    { name = "Shubham Mathur" },
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false
