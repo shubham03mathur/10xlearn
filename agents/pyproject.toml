@@ -1,0 +1,17 @@
+[project]
+name = "10xlearn-agents"
+version = "0.1.0"
+description = "Agent and workflow experiments"
+authors = [
+    { name = "Shubham Mathur" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    "llama-index-llms-huggingface-api",
+    "llama-index-llms-openrouter",
+    "llama-index-utils-workflow",
+    "python-dotenv",
+]
+
+[tool.uv]
+package = false

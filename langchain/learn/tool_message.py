@@ -7,7 +7,7 @@ To underatand how to call custom tools with langchain, visit ./model_with_basic_
 """
 
 from langchain.chat_models import init_chat_model
-from langchain.messages import AIMessage, ToolMessage, HumanMessage
+from langchain.messages import AIMessage, ToolMessage, HumanMessage, ToolCall
 from langchain_core.utils.uuid import uuid7
 
 model = init_chat_model('ollama:gemma4:12b-mlx')
@@ -20,6 +20,13 @@ ai_message = AIMessage(
         "id": call_id
     }]
 )
+
+# we can also use ToolCall to generate tool invoke request
+# ai_message = ToolCall({
+#     "name": "get_weather",
+#     "args": {},
+#     "id": call_id
+# })
 
 tool_result = ToolMessage(
     content="Sunny, 72F!",

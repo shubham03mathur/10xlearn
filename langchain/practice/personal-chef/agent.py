@@ -19,7 +19,7 @@ llm = init_chat_model(
     model_provider="ollama",
     temperature=0.7,
     timeout=60,
-    base_url="http://localhost:11434",
+    base_url=os.getenv('OLLAMA_BASE_URL'),
     num_predict=16334,
 )
 
