@@ -75,8 +75,3 @@ while True:
 
     except Exception:
         break
-
-            
-
-    
-
